@@ -1,0 +1,41 @@
+.card-body {
+    height: 70%;
+    overflow: auto;
+}
+
+.table {
+    font-family: IRANSansFaNum;
+    border: 1px solid #cccccc;
+}
+
+thead {
+    border-bottom: 1px solid #cccccc;
+    border: 1px solid #455F77;
+    background-image: linear-gradient(#5F7C95,#6E899F);
+}
+
+th, td {
+    text-align: center;
+}
+
+.gridColumnsTitle {
+    text-align: center;
+}
+
+.gridColumns {
+    border-left: 1px solid #DAE2E8;
+}
+
+.entityData:nth-child(even) {
+    background-color: #DAE2E8;
+}
+
+.entityData:hover {
+    background-image: linear-gradient(#C9E4F6,#A2DCF3,#BFE3F6,#BFE3F6);
+    background-color: #B7E1F5;
+    /* border: 1px solid #5D9FB7 !important;*/
+}
+
+.mat-menu-item {
+    font-family: IRANSansFaNum;
+}

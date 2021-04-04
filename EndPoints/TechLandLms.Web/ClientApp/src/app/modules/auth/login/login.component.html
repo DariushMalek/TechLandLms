@@ -1,0 +1,126 @@
+﻿<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card-group">
+                        <div class="card text-white py-5 d-md-down-none" style="background-color: #321FDB">
+                            <div class="card-body text-center">
+                                <div>
+                                    <h2 style="margin-top:15px;">ایجاد حساب کاربری</h2>
+                                    <p style="margin-top:15px;">جهت شرکت در دوره های آموزشی مختلف و همچنین برگزاری دوره های آموزشی به عنوان مدرس ثبت نام کنید.</p>
+                                    <button type="button" class="signUpBtn" (click)="signUp()">ثبت نام!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card p-4">
+                            <div class="card-body">
+                                <form class="form"
+                                      [formGroup]="loginForm"
+                                      novalidate="novalidate"
+                                      id="kt_login_signin_form"
+                                      (ngSubmit)="submit()">
+
+                                    <ng-container *ngIf="hasError">
+                                        <div class="mb-10 alert alert-custom alert-light-danger alert-dismissible">
+                                            <div class="alert-text">نام کاربری و رمزعبور صحیح نمی باشد</div>
+                                        </div>
+                                    </ng-container>
+                                    <h1>ورود</h1>
+                                    <p class="text-muted">ورود به پنل کاربر</p>
+
+                                    <ng-container [ngTemplateOutlet]="formError"
+                                                  [ngTemplateOutletContext]="{
+      validation: 'required',
+      message: 'لطفا ایمیل خود را وارد نمائید',
+      control: loginForm.controls['email']
+    }"></ng-container>
+                                    <ng-container [ngTemplateOutlet]="formError"
+                                                  [ngTemplateOutletContext]="{
+      validation: 'email',
+      message: 'ایمیل وارد شده صحیح نمی باشد',
+      control: loginForm.controls['email']
+    }"></ng-container>
+
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-user-circle" aria-hidden="true" style="margin:2px;"></i>
+                                            </span>
+                                        </div>
+                                        <input type="email"
+                                               class="form-control"
+                                               placeholder="ایمیل"
+                                               name="email"
+                                               formControlName="email"
+                                               [ngClass]="{ 'is-invalid': loginForm.controls['email'].invalid && loginForm.controls['email'].touched }">
+
+                                    </div>
+                                    <ng-container [ngTemplateOutlet]="formError"
+                                                  [ngTemplateOutletContext]="{
+      validation: 'required',
+      message: 'لطفا رمزعبور خود را وارد نمائید',
+      control: loginForm.controls['password']
+    }"></ng-container>
+                                    <ng-container [ngTemplateOutlet]="formError"
+                                                  [ngTemplateOutletContext]="{
+      validation: 'minlength',
+      message: 'حداقل تعداد کاراکتر 8 عدد می باشد',
+      control: loginForm.controls['password']
+    }"></ng-container>
+
+                                    <div class="input-group mb-4">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa"
+                                                   [ngClass]="{
+          'fa-eye-slash': !fieldTextType,
+          'fa-eye': fieldTextType
+        }"
+                                                   (click)="toggleFieldTextType()"></i>
+                                            </span>
+                                        </div>
+                                        <input [type]="fieldTextType ? 'text' : 'password'"
+                                               class="form-control"
+                                               placeholder="رمزعبور"
+                                               name="password"
+                                               formControlName="password"
+                                               [ngClass]="{ 'is-invalid': loginForm.controls['password'].invalid && loginForm.controls['password'].touched }">
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 text-right">
+                                            <button type="button" class="btn btn-link px-0" id="forgetPassword-btn">رمزعبور خود را فراموش کرده اید؟</button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button type="submit"
+                                                    id="kt_login_signin_submit"
+                                                    [disabled]="loginForm.invalid"
+                                                    [ngClass]="{
+            'spinner spinner-right spinner-md spinner-light': loading
+          }">
+                                                ورود
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<ng-template #formError
+             let-control="control"
+             let-message="message"
+             let-validation="validation">
+    <ng-container *ngIf="control.hasError(validation) && (control.dirty || control.touched)">
+        <div class="fv-plugins-message-container">
+            <div class="fv-help-block">
+                {{ message }}
+            </div>
+        </div>
+    </ng-container>
+</ng-template>

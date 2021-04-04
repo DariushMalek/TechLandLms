@@ -1,0 +1,60 @@
+:host {
+
+    @media screen and (max-width:300px) {
+
+        #ContainerResize {
+            width: 95%;
+        }
+    }
+
+    @media screen and (max-width:500px) {
+
+        #ContainerResize {
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-width:800px),screen and (min-width:500px) {
+
+        #ContainerResize {
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width:1200px),screen and (min-width:800px) {
+
+        #signUp-header {
+            width: 95%;
+        }
+
+        #user-account-header {
+            width: 95%;
+        }
+
+        input:hover {
+            border: 1px solid #a4bcb1;
+        }
+    }
+
+
+    #signUp-header {
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    #user-account-header {
+        text-align: center;
+    }
+
+    input:hover {
+        border: 2px solid #a4bcb1;
+    }
+
+    #signUp-btn {
+        background-color: #3eb265;
+    }
+
+    #signUp-btn:hover {
+        background-color: #26994D;
+    }
+}

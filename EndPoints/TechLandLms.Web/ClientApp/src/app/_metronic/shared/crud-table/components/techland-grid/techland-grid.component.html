@@ -1,0 +1,135 @@
+﻿<div class="card-body">
+    <!-- begin: Filtration form -->
+    <div class="form form-label-right" style="margin-top:-30px;">
+        <div class="form-group row">
+            <div class="col-lg-4">
+                <div class="row" [formGroup]="filterGroup">
+                    <div class="col-lg-6">
+                        <select class="form-control" name="isUserStudent" placeholder="Filter by isUserStudent" formControlName="isUserStudent">
+                            <option [ngValue]="">All</option>
+                            <option [ngValue]="0">Is Student</option>
+                            <option [ngValue]="1">Is Not Student</option>
+                        </select><small class="form-text text-muted"><b>Filter</b> by isUserStudent</small>
+                    </div>
+                    <div class="col-lg-6">
+                        <select class="form-control" placeholder="Filter by isTestUser" name="isTestUser" formControlName="isTestUser">
+                            <option [ngValue]="">All</option>
+                            <option [ngValue]="1">Is TestUser</option>
+                            <option [ngValue]="2">Is Not TestUser</option>
+                        </select><small class="form-text text-muted"><b>Filter</b> by isTestUser</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2" [formGroup]="searchGroup">
+                <input type="text" class="form-control" name="searchText" placeholder="Search" value=""
+                       formControlName="searchTerm" /><small class="form-text text-muted"><b>Search</b> in all fields</small>
+            </div>
+        </div>
+    </div>
+    <!-- end: Filtration form -->
+    <!-- begin: Grouping -->
+    <ng-container *ngIf="grouping.getSelectedRowsCount()">
+        <div class="form">
+            <div class="row align-items-center form-group-actions margin-top-20 margin-bottom-20">
+                <div class="col-xl-12">
+                    <div class="form-group form-group-inline">
+                        <div class="form-label form-label-no-wrap">
+                            <label class="font-bold font-danger">
+                                <span>
+                                    تعداد رکوردهای انتخاب شده:
+                                    <b>{{ grouping.getSelectedRowsCount() }}</b>
+                                </span>
+                            </label>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-danger font-weight-bolder font-size-sm mr-1"
+                                    (click)="deleteSelected()">
+                                <i class="fa fa-trash"></i> حذف همه
+                            </button>&nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <!-- end: Grouping -->
+    <!-- begin:Table -->
+    <div class="table-responsive angular-bootstrap-table">
+        <table class="table table-head-custom table-vertical-center overflow-hidden">
+            <thead>
+                <tr>
+                    <th [style.width.px]="20" class="selection-cell-header" data-row-selection="true">
+                        <label class="checkbox checkbox-single">
+                            <input class="selection-input" type="checkbox" (click)="grouping.selectAllRows()"
+                                   [checked]="grouping.checkAreAllRowsSelected()" /><span style="border: 1px solid #cccccc;"></span>
+                        </label>
+                    </th>
+                    <th [style.width.px]="column.width" class="gridColumnsTitle" *ngFor="let column of entityService.gridColumns">
+                        <span style="color:white;">{{column.columnTitle}}</span>
+                        <app-sort-icon column="{{column.columnName}}" [activeColumn]="sorting.column" [activeDirection]="sorting.direction"
+                                       (sort)="sort($event)"></app-sort-icon>
+                    </th>
+                    <th [style.width.%]="5">
+                        <span style="color: white;">ویرایش</span>
+                    </th>
+                    <th [style.width.%]="5">
+                        <span style="color: white;">حذف</span>
+                    </th>
+                    <th *ngIf="menuItems" [style.width.%]="10">
+                        <span style="color: white;">عملیات ها</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="entityData" *ngFor="let entity of entityService.items$ | async">
+                    <td class="selection-cell">
+                        <label class="checkbox checkbox-single">
+                            <input type="checkbox" (click)="grouping.selectRow(entity.id)"
+                                   [checked]="grouping.isRowSelected(entity.id)" />
+                            <span style="        border: 1px solid #cccccc;"></span>
+                        </label>
+                    </td>
+                    <td class="gridColumns" *ngFor="let column of entityService.gridColumns">
+                        {{entity[column.columnName[0].toLowerCase() + column.columnName.slice(1)]}}
+                    </td>
+
+                    <td>
+
+                        <a title="Edit entity" class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
+                           (click)="edit(entity)">
+                            <span [inlineSVG]="'./assets/media/svg/icons/Communication/Write.svg'" cacheSVG="true"
+                                  class="svg-icon svg-icon-md svg-icon-primary">
+                            </span>
+                        </a>
+
+                    </td>
+                    <td>
+                        <a title="Delete entity" class="btn btn-icon btn-light btn-hover-danger btn-sm"
+                           (click)="delete(entity.id)">
+                            <span [inlineSVG]="'./assets/media/svg/icons/General/Trash.svg'" cacheSVG="true"
+                                  class="svg-icon svg-icon-md svg-icon-danger">
+                            </span>
+                        </a>
+
+                    </td>
+                    <td *ngIf="menuItems">
+
+                        <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="سوالات">
+                            <mat-icon>list</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item *ngFor="let item of menuItems" (click)="menuItemClick(item.name, entity)">
+                                <mat-icon>{{item.icon}}</mat-icon>
+                                <span>{{item.title}}</span>
+                            </button>
+                        </mat-menu>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- end: Table -->
+    <app-paginator class="d-flex justify-content-between align-items-center flex-wrap" [paginator]="paginator"
+                   [isLoading]="isLoading" (paginate)="paginate($event)"></app-paginator>
+</div>

@@ -1,0 +1,320 @@
+﻿<div class="card card-custom gutter-b" style="height:94%;">
+    <div class="card-header">
+        <div class="card-title">
+            <h3 class="card-label">دوره های تدریس</h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <!--begin: Wizard -->
+        <div #wizard
+             class="wizard wizard-1"
+             id="kt_wizard_v1"
+             data-wizard-state="step-first"
+             data-wizard-clickable="true">
+            <!--begin: Form Wizard Nav -->
+            <div class="wizard-nav border-bottom">
+                <div class="wizard-steps p-20 p-lg-9">
+                    <a class="wizard-step" href="javascript:;" data-wizard-type="step" data-wizard-state="current">
+                        <div class="wizard-label">
+                            <i class="wizard-icon flaticon-folder-1" style="margin:0.1%;"></i>
+                            <h3 class="wizard-title">1) مشخصات دوره </h3>
+                        </div>
+                    </a>
+                    <a class="wizard-step" href="javascript:;" data-wizard-type="step">
+                        <div class="wizard-label">
+                            <i class="wizard-icon flaticon-list" style="        margin: 0.1%;"></i>
+                            <h3 class="wizard-title">2) معرفی دوره </h3>
+                        </div>
+                    </a>
+                    <a class="wizard-step" href="javascript:;" data-wizard-type="step">
+                        <div class="wizard-label">
+                            <i class="wizard-icon flaticon-users" style="        margin: 0.1%;"></i>
+                            <h3 class="wizard-title">3) مخاطبین</h3>
+                        </div>
+                    </a>
+                    <a class="wizard-step" href="javascript:;" data-wizard-type="step">
+                        <div class="wizard-label">
+                            <i class="wizard-icon flaticon-notes" style="        margin: 0.1%;"></i>
+                            <h3 class="wizard-title">4) سرفصل ها</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--end: Form Wizard Nav -->
+            <div class="row justify-content-center my-14 px-10 my-lg-18 px-lg-14">
+                <div class="col-xl-12 col-xxl-7">
+                    <!--begin: Form Wizard Form-->
+                    <form class="form" id="kt_form"
+                          novalidate="novalidate"
+                          [formGroup]="courseForm"
+                          autocomplete="off">
+                        <!--begin: Form Wizard Step 1-->
+                        <div class="pb-4" style="height:27%;"
+                             data-wizard-type="step-content"
+                             data-wizard-state="current">
+                            <div class="row">
+                                <div class="col-xl-5">
+                                    <mat-form-field class="mat-form-field-fluid">
+                                        <div class="form-group">
+                                            <label>عنوان دوره</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   formControlName="courseTitle"
+                                                   [(ngModel)]="courseModel.courseTitle"
+                                                   name="courseTitle"
+                                                   id="courseTitle"
+                                                   placeholder="عنوان دوره"
+                                                   required
+                                                   [ngClass]="{
+          'is-invalid': courseForm.controls['courseTitle'].invalid && courseForm.controls['courseTitle'].touched
+        }" />
+                                            <ng-container [ngTemplateOutlet]="formError"
+                                                          [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'لطفا عنوان دوره را وارد نمائید',
+                                  control: courseForm.controls['courseTitle']
+                                }"></ng-container>
+                                            <ng-container [ngTemplateOutlet]="formError"
+                                                          [ngTemplateOutletContext]="{
+                                  validation: 'minlength',
+                                  message: 'حداقل 3 کاراکتر می توانید وارد کنید',
+                                  control: courseForm.controls['courseTitle']
+                                }"></ng-container>
+                                            <ng-container [ngTemplateOutlet]="formError"
+                                                          [ngTemplateOutletContext]="{
+                                  validation: 'maxLength',
+                                  message: 'حداکثر 100 کاراکتر می توانید وارد کنید',
+                                  control: courseForm.controls['courseTitle']
+                                }"></ng-container>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-xl-4">
+                                    <mat-form-field class="mat-form-field-fluid">
+                                        <div class="form-group">
+                                            <label>موضوع</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   formControlName="subjectText"
+                                                   [(ngModel)]="courseModel.subjectText"
+                                                   name="subjectText"
+                                                   id="subjectText"
+                                                   placeholder="موضوع"
+                                                   required
+                                                   [ngClass]="{
+          'is-invalid': courseForm.controls['subjectText'].invalid && courseForm.controls['subjectText'].touched
+        }" />
+                                            <ng-container [ngTemplateOutlet]="formError"
+                                                          [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'لطفا موضوع دوره را وارد نمائید',
+                                  control: courseForm.controls['subjectText']
+                                }"></ng-container>
+                                            <ng-container [ngTemplateOutlet]="formError"
+                                                          [ngTemplateOutletContext]="{
+                                  validation: 'minlength',
+                                  message: 'حداقل 3 کاراکتر می توانید وارد کنید',
+                                  control: courseForm.controls['subjectText']
+                                }"></ng-container>
+                                            <ng-container [ngTemplateOutlet]="formError"
+                                                          [ngTemplateOutletContext]="{
+                                  validation: 'maxLength',
+                                  message: 'حداکثر 70 کاراکتر می توانید وارد کنید',
+                                  control: courseForm.controls['subjectText']
+                                }"></ng-container>
+                                        </div>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="form-group">
+                                        <label> تعداد جلسات</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               formControlName="numberOfSessions"
+                                               [(ngModel)]="courseModel.numberOfSessions"
+                                               name="numberOfSessions"
+                                               placeholder="تعداد جلسات">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <form class="form-inline">
+                                        <div class="input-group">
+                                            <label> تاریخ شروع دوره</label>
+                                            <dp-date-picker dir="rtl"
+                                                            [(ngModel)]="startPersianDateObject"
+                                                            mode="daytime"
+                                                            placeholder="تاریخ شروع دوره"
+                                                            id="startPersianDate"
+                                                            name="startPersianDate"
+                                                            theme="dp-material"
+                                                            ngModel
+                                                            required>
+                                            </dp-date-picker>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-xl-6">
+                                    <form class="form-inline">
+                                        <div class="input-group">
+                                            <label> تاریخ پایان دوره</label>
+                                            <dp-date-picker dir="rtl"
+                                                            [(ngModel)]="endPersianDateObject"
+                                                            mode="daytime"
+                                                            placeholder="تاریخ پایان دوره"
+                                                            id="endPersianDate"
+                                                            name="endPersianDate"
+                                                            theme="dp-material"
+                                                            ngModel
+                                                            required>
+                                            </dp-date-picker>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>هزینه کل دوره</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               formControlName="onlineCost"
+                                               [(ngModel)]="courseModel.onlineCost"
+                                               name="onlineCost"
+                                               placeholder="هزینه کل دوره" />
+                                        <span class="form-text text-muted">لطفا هزینه کل دوره را وارد نمائید</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <label>نحوه پرداخت</label>
+                                        <select name="paymentTypeId"
+                                                class="form-control"
+                                                formControlName="paymentTypeId"
+                                                [(ngModel)]="courseModel.paymentTypeId">
+                                            <option [value]="" selected>(بدون مقدار)</option>
+                                            <option [value]="item.id" *ngFor="let item of paymentTypeList;">{{item.constantTitle}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 1-->
+                        <!--begin: Form Wizard Step 2-->
+                        <div class="pb-4" style="        height: 280px;"
+                             data-wizard-type="step-content">
+                            <mat-form-field class="mat-form-field-fluid">
+                                <div class="form-group">
+                                    <label>شرح مختصر دوره</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           formControlName="introduction"
+                                           [(ngModel)]="courseModel.introduction"
+                                           name="introduction"
+                                           id="introduction"
+                                           placeholder="شرح مختصر دوره"
+                                           required
+                                           [ngClass]="{
+          'is-invalid': courseForm.controls['introduction'].invalid && courseForm.controls['introduction'].touched
+        }" />
+                                    <ng-container [ngTemplateOutlet]="formError"
+                                                  [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'لطفا شرح مختصری از دوره را وارد نمائید',
+                                  control: courseForm.controls['introduction']
+                                }"></ng-container>
+                                </div>
+                            </mat-form-field>
+                            <div class="form-group">
+                                <label>معرفی کامل دوره</label>
+                                <input type="text"
+                                       class="form-control"
+                                       formControlName="completeIntroduction"
+                                       [(ngModel)]="courseModel.completeIntroduction"
+                                       name="completeIntroduction"
+                                       placeholder="معرفی کامل دوره" />
+                                <span class="form-text text-muted">لطفا شرح کاملی از دوره را وارد نمائید</span>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 2-->
+                        <!--begin: Form Wizard Step 3-->
+                        <div class="pb-4" style="        height: 280px;"
+                             data-wizard-type="step-content">
+                            <div class="form-group">
+                                <label>شرح پیش نیاز دوره</label>
+                                <input type="text"
+                                       class="form-control"
+                                       formControlName="prerequisites"
+                                       [(ngModel)]="courseModel.prerequisites"
+                                       name="prerequisites"
+                                       placeholder="شرح پیش نیاز دوره" />
+                                <span class="form-text text-muted">لطفا پیش نیاز دوره را وارد نمائید</span>
+                            </div>
+                            <div class="form-group">
+                                <label>مخاطبین دوره</label>
+                                <input type="text"
+                                       class="form-control"
+                                       formControlName="audiencesDes"
+                                       [(ngModel)]="courseModel.audiencesDes"
+                                       name="audiencesDes"
+                                       placeholder="مخاطبین دوره" />
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 3-->
+                        <!--begin: Form Wizard Step 4-->
+                        <div class="pb-4" style="        height: 280px;"
+                             data-wizard-type="step-content">
+                            <div class="form-group">
+                                <label>سرفصل ها</label>
+                                <input type="text"
+                                       class="form-control"
+                                       formControlName="topics"
+                                       [(ngModel)]="courseModel.topics"
+                                       name="topics"
+                                       placeholder="سرفصل" />
+                                <span class="form-text text-muted">لطفا سرفصل های دوره را وارد نمائید</span>
+                            </div>
+                        </div>
+                        <!--end: Form Wizard Step 4-->
+                        <div class="d-flex justify-content-between border-top pt-4">
+                            <div class="mr-2">
+                                <div class="btn btn-light-primary font-weight-bold text-uppercase px-9 py-4"
+                                     data-wizard-type="action-prev" id="btn">
+                                    قبل
+                                </div>
+                            </div>
+                            <div>
+                                <div (click)="onSubmit()"
+                                     class="btn btn-success font-weight-bold text-uppercase px-9 py-4"
+                                     data-wizard-type="action-submit" id="btn">
+                                    ثبت
+                                </div>
+                                <div class="btn btn-primary font-weight-bold text-uppercase px-9 py-4"
+                                     data-wizard-type="action-next" id="btn">
+                                    بعدی
+                                </div>
+                            </div>
+                        </div>
+                        <!--end: Form Actions -->
+                    </form>
+                    <!--end: Form Wizard Form-->
+                </div>
+            </div>
+        </div>
+        <!--end: Wizard -->
+    </div>
+</div>
+
+<ng-template #formError
+             let-control="control"
+             let-message="message"
+             let-validation="validation">
+    <ng-container *ngIf="control.hasError(validation) && (control.dirty || control.touched)">
+        <div class="fv-plugins-message-container">
+            <div class="fv-help-block">
+                {{ message }}
+            </div>
+        </div>
+    </ng-container>
+</ng-template>

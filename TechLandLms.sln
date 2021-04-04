@@ -1,0 +1,123 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandLms.Web", "EndPoints\TechLandLms.Web\TechLandLms.Web.csproj", "{DF60D4F1-1F41-486C-AB00-497977D94576}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EndPoints", "EndPoints", "{A36C1E56-9055-4F57-990A-6AC41DF7485F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{615A7538-8957-478C-AA5C-3B75D39772E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{105ECC5D-19DC-4686-BD1E-D18FAE59814B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TechLandTools", "TechLandTools", "{2ADCCE3C-7946-41A1-8639-C7C723E11C73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandTools.Web", "..\..\..\TechLandTools\Net5\TechLandTools.Web\TechLandTools.Web.csproj", "{E7D00986-E801-4ACC-BD55-7F72AD108602}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandTools.Common", "..\..\..\TechLandTools\Net5\TechLandTools.Common\TechLandTools.Common.csproj", "{5D8AF860-87D4-4E33-BAB3-99106DDBD9A3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandLms.Core", "Core\TechLandLms.Core\TechLandLms.Core.csproj", "{23BEB54C-694B-4775-8E82-74682BE8BC24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandLms.Model", "Core\TechLandLms.Dto\TechLandLms.Model.csproj", "{B6523543-8698-4FCE-9DAA-3FA2B20BF8FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandLms.Services", "Core\TechLandLms.Services\TechLandLms.Services.csproj", "{A1010C40-A1CC-444E-9FCF-0E2699688612}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandLms.Infrastructure", "Infrastructure\TechLandLms.Infrastructure\TechLandLms.Infrastructure.csproj", "{37E020B2-8747-421E-BABA-8B6D19A5C11F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechLandLms.Common", "Core\TechLandLms.Common\TechLandLms.Common.csproj", "{F4F386DA-88F3-406B-910B-2048CBA6902A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF60D4F1-1F41-486C-AB00-497977D94576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF60D4F1-1F41-486C-AB00-497977D94576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF60D4F1-1F41-486C-AB00-497977D94576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF60D4F1-1F41-486C-AB00-497977D94576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7D00986-E801-4ACC-BD55-7F72AD108602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7D00986-E801-4ACC-BD55-7F72AD108602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7D00986-E801-4ACC-BD55-7F72AD108602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7D00986-E801-4ACC-BD55-7F72AD108602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D8AF860-87D4-4E33-BAB3-99106DDBD9A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D8AF860-87D4-4E33-BAB3-99106DDBD9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D8AF860-87D4-4E33-BAB3-99106DDBD9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D8AF860-87D4-4E33-BAB3-99106DDBD9A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23BEB54C-694B-4775-8E82-74682BE8BC24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BEB54C-694B-4775-8E82-74682BE8BC24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BEB54C-694B-4775-8E82-74682BE8BC24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BEB54C-694B-4775-8E82-74682BE8BC24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6523543-8698-4FCE-9DAA-3FA2B20BF8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6523543-8698-4FCE-9DAA-3FA2B20BF8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6523543-8698-4FCE-9DAA-3FA2B20BF8FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6523543-8698-4FCE-9DAA-3FA2B20BF8FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1010C40-A1CC-444E-9FCF-0E2699688612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1010C40-A1CC-444E-9FCF-0E2699688612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1010C40-A1CC-444E-9FCF-0E2699688612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1010C40-A1CC-444E-9FCF-0E2699688612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37E020B2-8747-421E-BABA-8B6D19A5C11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E020B2-8747-421E-BABA-8B6D19A5C11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E020B2-8747-421E-BABA-8B6D19A5C11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E020B2-8747-421E-BABA-8B6D19A5C11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4F386DA-88F3-406B-910B-2048CBA6902A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4F386DA-88F3-406B-910B-2048CBA6902A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4F386DA-88F3-406B-910B-2048CBA6902A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4F386DA-88F3-406B-910B-2048CBA6902A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DF60D4F1-1F41-486C-AB00-497977D94576} = {A36C1E56-9055-4F57-990A-6AC41DF7485F}
+		{E7D00986-E801-4ACC-BD55-7F72AD108602} = {2ADCCE3C-7946-41A1-8639-C7C723E11C73}
+		{5D8AF860-87D4-4E33-BAB3-99106DDBD9A3} = {2ADCCE3C-7946-41A1-8639-C7C723E11C73}
+		{23BEB54C-694B-4775-8E82-74682BE8BC24} = {615A7538-8957-478C-AA5C-3B75D39772E5}
+		{B6523543-8698-4FCE-9DAA-3FA2B20BF8FE} = {615A7538-8957-478C-AA5C-3B75D39772E5}
+		{A1010C40-A1CC-444E-9FCF-0E2699688612} = {615A7538-8957-478C-AA5C-3B75D39772E5}
+		{37E020B2-8747-421E-BABA-8B6D19A5C11F} = {105ECC5D-19DC-4686-BD1E-D18FAE59814B}
+		{F4F386DA-88F3-406B-910B-2048CBA6902A} = {615A7538-8957-478C-AA5C-3B75D39772E5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2774B8E0-4EAC-4192-A122-3C6E12546E0A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://nomalek.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EndPoints\\TechLandLms.Web\\TechLandLms.Web.csproj
+		SccProjectTopLevelParentUniqueName1 = TechLandLms.sln
+		SccProjectName1 = EndPoints/TechLandLms.Web
+		SccLocalPath1 = EndPoints\\TechLandLms.Web
+		SccProjectUniqueName2 = ..\\..\\..\\TechLandTools\\Net5\\TechLandTools.Web\\TechLandTools.Web.csproj
+		SccProjectTopLevelParentUniqueName2 = TechLandLms.sln
+		SccProjectName2 = ../../../TechLandTools/Net5/TechLandTools.Web
+		SccLocalPath2 = ..\\..\\..\\TechLandTools\\Net5\\TechLandTools.Web
+		SccProjectUniqueName3 = ..\\..\\..\\TechLandTools\\Net5\\TechLandTools.Common\\TechLandTools.Common.csproj
+		SccProjectTopLevelParentUniqueName3 = TechLandLms.sln
+		SccProjectName3 = ../../../TechLandTools/Net5/TechLandTools.Common
+		SccLocalPath3 = ..\\..\\..\\TechLandTools\\Net5\\TechLandTools.Common
+		SccProjectUniqueName4 = Core\\TechLandLms.Core\\TechLandLms.Core.csproj
+		SccProjectTopLevelParentUniqueName4 = TechLandLms.sln
+		SccProjectName4 = Core/TechLandLms.Core
+		SccLocalPath4 = Core\\TechLandLms.Core
+		SccProjectUniqueName5 = Core\\TechLandLms.Services\\TechLandLms.Services.csproj
+		SccProjectTopLevelParentUniqueName5 = TechLandLms.sln
+		SccProjectName5 = Core/TechLandLms.Services
+		SccLocalPath5 = Core\\TechLandLms.Services
+		SccProjectUniqueName6 = Infrastructure\\TechLandLms.Infrastructure\\TechLandLms.Infrastructure.csproj
+		SccProjectTopLevelParentUniqueName6 = TechLandLms.sln
+		SccProjectName6 = Infrastructure/TechLandLms.Infrastructure
+		SccLocalPath6 = Infrastructure\\TechLandLms.Infrastructure
+		SccProjectUniqueName7 = Core\\TechLandLms.Dto\\TechLandLms.Model.csproj
+		SccProjectTopLevelParentUniqueName7 = TechLandLms.sln
+		SccProjectName7 = Core/TechLandLms.Dto
+		SccLocalPath7 = Core\\TechLandLms.Dto
+		SccProjectUniqueName8 = Core\\TechLandLms.Common\\TechLandLms.Common.csproj
+		SccProjectTopLevelParentUniqueName8 = TechLandLms.sln
+		SccProjectName8 = Core/TechLandLms.Common
+		SccLocalPath8 = Core\\TechLandLms.Common
+	EndGlobalSection
+EndGlobal

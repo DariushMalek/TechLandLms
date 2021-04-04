@@ -1,0 +1,310 @@
+﻿
+<div class="login-form login-signup">
+    <form class="form"
+          novalidate="novalidate"
+          id="kt_login_signup_form"
+          [formGroup]="registrationForm"
+          autocomplete="off"
+          (ngSubmit)="submit()">
+        <!--<ng-container *ngIf="hasError">
+            <div class="mb-10 alert alert-custom alert-light-danger alert-dismissible">
+                <div class="alert-text">اطلاعات وارد شده صحیح نمی باشد</div>
+            </div>
+        </ng-container>-->
+
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 lg-auto" id="ContainerResize">
+                    <div class="card" id="cart-class">
+                        <div class="card-body">
+                            <h1 id="signUp-header">ثبت نام</h1>
+                            <p id="user-account-header" class="text-muted">ایجاد حساب کاربری</p>
+
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'نام را وارد کنید',
+                                  control: registrationForm.controls['firstName']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'minlength',
+                                  message: 'حداقل 2 کاراکتر می توانید وارد کنید',
+                                  control: registrationForm.controls['firstName']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'maxLength',
+                                  message: 'حداکثر 40 کاراکتر می توانید وارد کنید',
+                                  control: registrationForm.controls['firstName']
+                                }"></ng-container>
+
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user-circle" aria-hidden="true" style="margin:2px;"></i>
+                                    </span>
+                                </div>
+
+                                <input class="form-control"
+                                       type="text"
+                                       placeholder="نام"
+                                       name="firstName"
+                                       id="firstName"
+                                       formControlName="firstName"
+                                       autocomplete="off"
+                                       [ngClass]="{
+          'is-invalid': registrationForm.controls['firstName'].invalid && registrationForm.controls['firstName'].touched
+        }" />
+                            </div>
+
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'نام خانوادگی را وارد نمائید',
+                                  control: registrationForm.controls['lastName']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'minlength',
+                                   message: 'حداقل 2 کاراکتر می توانید وارد کنید',
+                                  control: registrationForm.controls['lastName']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'maxLength',
+                                   message: 'حداکثر 40 کاراکتر می توانید وارد کنید',
+                                  control: registrationForm.controls['lastName']
+                                }"></ng-container>
+
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user-circle" aria-hidden="true" style="margin:2px;"></i>
+                                    </span>
+                                </div>
+
+                                <input class="form-control"
+                                       type="text"
+                                       placeholder="نام خانوادگی"
+                                       name="lastName"
+                                       id="lastName"
+                                       formControlName="lastName"
+                                       autocomplete="off"
+                                       [ngClass]="{
+          'is-invalid': registrationForm.controls['lastName'].invalid && registrationForm.controls['lastName'].touched
+        }" />
+                            </div>
+
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'نام کاربری را وارد نمائید',
+                                  control: registrationForm.controls['userName']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'minlength',
+                                  message: 'حداقل 4 کاراکتر می توانید وارد کنید',
+                                  control: registrationForm.controls['userName']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'maxLength',
+                                   message: 'حداکثر 20 کاراکتر می توانید وارد کنید',
+                                  control: registrationForm.controls['userName']
+                                }"></ng-container>
+                            <ng-container *ngIf="errorMessageUserName">
+                                <p style="color:red;">{{ errorMessageUserName }}</p>
+                            </ng-container>
+
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user-circle" aria-hidden="true" style="margin:2px;"></i>
+                                    </span>
+                                </div>
+                                <input class="form-control"
+                                       type="text"
+                                       placeholder="نام کاربری"
+                                       name="userName"
+                                       id="userName"
+                                       formControlName="userName"
+                                       autocomplete="off"
+                                       [ngClass]="{
+          'is-invalid': registrationForm.controls['userName'].invalid && registrationForm.controls['userName'].touched
+        }" />
+                            </div>
+
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'شماره همراه را وارد نمائید',
+                                  control: registrationForm.controls['phoneNumber']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'Pattern',
+                                  message: 'شماره همراه به صورت صحیح وارد نشده است',
+                                  control: registrationForm.controls['phoneNumber']
+                                }"></ng-container>
+                            <ng-container *ngIf="errorMessagePhoneNumber">
+                                <p style="color:red;">{{ errorMessagePhoneNumber}}</p>
+                            </ng-container>
+
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-mobile-alt" style="margin:5px"></i>
+                                    </span>
+                                </div>
+
+                                <input class="form-control"
+                                       type="text"
+                                       placeholder="به طور مثال 09123456789"
+                                       name="phoneNumber"
+                                       id="phoneNumber"
+                                       formControlName="phoneNumber"
+                                       autocomplete="off"
+                                       [ngClass]="{
+          'is-invalid': registrationForm.controls['phoneNumber'].invalid && registrationForm.controls['phoneNumber'].touched
+        }" />
+                            </div>
+
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'email',
+                                  message: 'ایمیل وارد شده صحیح نمی باشد',
+                                  control: registrationForm.controls['email']
+                                }"></ng-container>
+                            <ng-container *ngIf="errorMessageEmail">
+                                <p style="color:red;">{{ errorMessageEmail }}</p>
+                            </ng-container>
+
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-envelope" aria-hidden="true" style="margin:2px;"></i>
+                                    </span>
+                                </div>
+
+                                <input class="form-control"
+                                       type="email"
+                                       placeholder="به طور مثال Info@gmail.com"
+                                       name="email"
+                                       id="email"
+                                       formControlName="email"
+                                       autocomplete="off"
+                                       [ngClass]="{
+          'is-invalid': registrationForm.controls['email'].invalid && registrationForm.controls['email'].touched
+        }" />
+                            </div>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'رمزعبور را وارد نمائید',
+                                  control: registrationForm.controls['pass']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'maxLength',
+                                  message: 'طول رمزعبور حداکثر 20 کاراکتر است',
+                                  control: registrationForm.controls['pass']
+                                }"></ng-container>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'pattern',
+                                  message: 'رمزعبور شامل حداقل 8 کاراکتر،حروف و اعداد می باشد',
+                                  control: registrationForm.controls['pass']
+                                }"></ng-container>
+
+                            <div class="input-group mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa"
+                                           [ngClass]="{
+          'fa-eye-slash': !password,
+          'fa-eye': password
+        }"
+                                           (click)="togglePassword()"></i>
+                                    </span>
+                                </div>
+                                <input class="form-control"
+                                       [type]="password ? 'text' : 'password'"
+                                       placeholder="رمزعبور"
+                                       name="pass"
+                                       id="pass"
+                                       formControlName="pass"
+                                       autocomplete="new-password"
+                                       [ngClass]="{
+          'is-invalid': registrationForm.controls['pass'].invalid && registrationForm.controls['pass'].touched
+        }" />
+                            </div>
+                            <ng-container [ngTemplateOutlet]="formError"
+                                          [ngTemplateOutletContext]="{
+                                  validation: 'required',
+                                  message: 'تکرار رمزعبور',
+                                  control: registrationForm.controls['confirmPass']
+                                }"></ng-container>
+                            <ng-container *ngIf="
+          registrationForm.controls['confirmPass'].errors &&
+          registrationForm.controls['confirmPass'].errors.ConfirmPassword
+        ">
+                                <div class="fv-plugins-message-container">
+                                    <div class="fv-help-block">
+                                        رمز عبور و تکرار آن مطابقت ندارند
+                                    </div>
+                                </div>
+                            </ng-container>
+
+                            <div class="input-group mb-5">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa"
+                                           [ngClass]="{
+          'fa-eye-slash': !confirmPassword,
+          'fa-eye': confirmPassword
+        }"
+                                           (click)="toggleConfirmPassword()"></i>
+                                    </span>
+                                </div>
+                                <input class="form-control"
+                                       [type]="confirmPassword ? 'text' : 'password'"
+                                       placeholder="تکرار رمزعبور"
+                                       name="confirmPass"
+                                       id="confirmPass"
+                                       formControlName="confirmPass"
+                                       autocomplete="off"
+                                       [ngClass]="{
+          'is-invalid': registrationForm.controls['confirmPass'].invalid && registrationForm.controls['confirmPass'].touched
+        }" />
+                            </div>
+
+                            <button class="btn btn-block btn-success" 
+                                    type="submit" 
+                                    id="signUp-btn" 
+                                    style="cursor: pointer;"
+                                    [disabled]="registrationForm.invalid"
+                                    [ngClass]="{'spinner spinner-right spinner-md spinner-light': loading}">
+                                ایجاد حساب
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<ng-template #formError
+             let-control="control"
+             let-message="message"
+             let-validation="validation">
+    <ng-container *ngIf="control.hasError(validation) && (control.dirty || control.touched)">
+        <div class="fv-plugins-message-container">
+            <div class="fv-help-block">
+                {{ message }}
+            </div>
+        </div>
+    </ng-container>
+</ng-template>

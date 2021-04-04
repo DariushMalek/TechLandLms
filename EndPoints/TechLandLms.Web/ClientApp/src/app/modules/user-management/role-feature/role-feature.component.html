@@ -1,0 +1,127 @@
+﻿<div class="card card-custom gutter-b">
+    <div class="card card-custom gutter-b">
+        <div class="card-header">
+            <div class="card-title">
+                <h3 class="card-label">امکانات نقش</h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-body">
+
+        <!-- begin:Table -->
+        <div class="table-responsive angular-bootstrap-table">
+            <table class="table table-head-custom table-vertical-center overflow-hidden">
+                <thead>
+                    <tr>
+                        <!--<th [style.width.px]="20" class="selection-cell-header" data-row-selection="true">
+                            <label class="checkbox checkbox-single">
+                                <input class="selection-input" type="checkbox" (click)="grouping.selectAllRows()"
+                                       [checked]="grouping.checkAreAllRowsSelected()" /><span style="border: 1px solid #cccccc;"></span>
+                            </label>
+                        </th>-->
+                        <th class="gridColumnsTitle">
+                            <span style="color:white;">عنوان امکان</span>
+                        </th>
+                        <th class="gridColumnsTitle">
+                            <span style="color:white;">مجوز درج</span>
+                        </th>
+                        <th class="gridColumnsTitle">
+                            <span style="color:white;">مجوز تغییر</span>
+                        </th>
+                        <th class="gridColumnsTitle">
+                            <span style="color:white;">مجوز حذف</span>
+                        </th>
+                        <th class="gridColumnsTitle">
+                            <span style="color:white;">مجوز اجرا</span>
+                        </th>
+                        <th class="gridColumnsTitle">
+                            <span style="color:white;">مجوز خواندن</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let entity of roleFeatureList">
+                    <tr class="entityData" >
+
+                        <td class="gridColumns">
+                            {{entity.featureTitle}}
+                        </td>
+                        <td class="selection-cell">
+                            <label class="checkbox checkbox-single">
+                                <input type="checkbox" />
+                                <span style="        border: 1px solid #cccccc;"></span>
+                            </label>
+                        </td>
+                        <td class="selection-cell">
+                            <label class="checkbox checkbox-single">
+                                <input type="checkbox" />
+                                <span style="        border: 1px solid #cccccc;"></span>
+                            </label>
+                        </td>
+                        <td class="selection-cell">
+                            <label class="checkbox checkbox-single">
+                                <input type="checkbox" />
+                                <span style="        border: 1px solid #cccccc;"></span>
+                            </label>
+                        </td>
+                        <td class="selection-cell">
+                            <label class="checkbox checkbox-single">
+                                <input type="checkbox" />
+                                <span style="        border: 1px solid #cccccc;"></span>
+                            </label>
+                        </td>
+                        <td class="selection-cell">
+                            <label class="checkbox checkbox-single">
+                                <input type="checkbox" />
+                                <span style="        border: 1px solid #cccccc;"></span>
+                            </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end: Table -->
+        <!--<app-paginator class="d-flex justify-content-between align-items-center flex-wrap" [paginator]="paginator"
+                       [isLoading]="isLoading" (paginate)="paginate($event)"></app-paginator>-->
+    </div>
+</div>
+<ng-template #featureNodeBody let-item="roleFeatureList">
+    <tbody *ngFor="let entity of roleFeatureList">
+        <tr class="entityData">
+
+            <td class="gridColumns">
+                {{entity.featureTitle}}
+            </td>
+            <td class="selection-cell">
+                <label class="checkbox checkbox-single">
+                    <input type="checkbox" />
+                    <span style="        border: 1px solid #cccccc;"></span>
+                </label>
+            </td>
+            <td class="selection-cell">
+                <label class="checkbox checkbox-single">
+                    <input type="checkbox" />
+                    <span style="        border: 1px solid #cccccc;"></span>
+                </label>
+            </td>
+            <td class="selection-cell">
+                <label class="checkbox checkbox-single">
+                    <input type="checkbox" />
+                    <span style="        border: 1px solid #cccccc;"></span>
+                </label>
+            </td>
+            <td class="selection-cell">
+                <label class="checkbox checkbox-single">
+                    <input type="checkbox" />
+                    <span style="        border: 1px solid #cccccc;"></span>
+                </label>
+            </td>
+            <td class="selection-cell">
+                <label class="checkbox checkbox-single">
+                    <input type="checkbox" />
+                    <span style="        border: 1px solid #cccccc;"></span>
+                </label>
+            </td>
+        </tr>
+    </tbody>
+</ng-template>

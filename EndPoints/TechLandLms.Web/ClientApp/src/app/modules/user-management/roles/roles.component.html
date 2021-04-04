@@ -1,0 +1,16 @@
+﻿<div class="card card-custom gutter-b">
+    <div class="card card-custom gutter-b">
+        <div class="card-header">
+            <div class="card-title">
+                <h3 class="card-label">نقش ها</h3>
+            </div>
+            <div class="card-toolbar">
+                <a type="button" class="btn btn-primary"
+                   routerLink="/user-management/roles/add">ثبت نقش جدید</a>
+            </div>
+        </div>
+
+    </div>
+    <app-techland-grid [entityService]="roleService" [menuItems] ="menuItems"
+                       (onMenuItemClick)="menuItemClick($event)"></app-techland-grid>
+</div>

@@ -1,0 +1,119 @@
+:host {
+    width: 100%;
+
+    @media (min-width: 992px) {
+        .login-form {
+            width: 100%;
+            max-width: 500px;
+
+            .mat-form-field {
+                width: 100%;
+            }
+
+            #forgetPassword-btn {
+                width: 170%;
+                font-size: 11px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        #kt_login_signin_submit {
+            font-size: 11px;
+            border-radius: 3px;
+            width: 60%;
+            height: 59%;
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+
+        .signUpBtn {
+            margin-top: 15px;
+            border: 1px solid white;
+            border-radius: 5px;
+            width: 40%;
+            height: 20%;
+            font-size: 18px;
+            background-color: #321FDB;
+            color: white;
+        }
+
+        #forgetPassword-btn {
+            width: 150%;
+            font-size: 11px;
+        }
+    }
+
+    @media (max-width:1200px) and (min-width:600px) {
+        #kt_login_signin_submit {
+            font-size: 13px;
+            border-radius: 3px;
+            width: 60%;
+            height: 50%;
+            margin-right: 40px;
+            margin-top: 30px;
+        }
+
+        .signUpBtn {
+            margin-top: 15px;
+            border: 1px solid white;
+            border-radius: 5px;
+            width: 40%;
+            height: 20%;
+            font-size: 18px;
+            background-color: #321FDB;
+            color: white;
+        }
+
+        #forgetPassword-btn {
+            width: 150%;
+            font-size: 11px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.signUpBtn {
+    margin-top: 27px;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 35%;
+    height: 20%;
+    font-size: 18px;
+    background-color: #321FDB;
+    color: white;
+}
+
+.signUpBtn:hover {
+    background-color: #EBEDEF;
+    color: #4F5D73;
+}
+
+#kt_login_signin_submit {
+    background-color: #321FDB;
+    color: white;
+    font-size: 15px;
+    width: 50%;
+    height: 65%;
+    border-radius: 5px;
+    border: none;
+    margin-top: 22px;
+    margin-right: 70px;
+}
+
+#kt_login_signin_submit:hover {
+    background-color: #2A1AB9;
+    color: white;
+}
+
+#forgetPassword-btn {
+    color: #321FDB;
+    /*margin-left: 40px;*/
+    width: 100%;
+    font-size:12px;
+}
+
+#forgetPassword-btn:hover {
+    color: #434547;
+}
