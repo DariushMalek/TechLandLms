@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TechLandTools", "TechLandTools", "{2ADCCE3C-7946-41A1-8639-C7C723E11C73}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandTools.Web", "..\..\..\TechLandTools\Net5\TechLandTools.Web\TechLandTools.Web.csproj", "{E7D00986-E801-4ACC-BD55-7F72AD108602}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandTools.Web", "TechLandTools\TechLandTools.Web\TechLandTools.Web.csproj", "{E7D00986-E801-4ACC-BD55-7F72AD108602}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandTools.Common", "..\..\..\TechLandTools\Net5\TechLandTools.Common\TechLandTools.Common.csproj", "{5D8AF860-87D4-4E33-BAB3-99106DDBD9A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandTools.Common", "TechLandTools\TechLandTools.Common\TechLandTools.Common.csproj", "{5D8AF860-87D4-4E33-BAB3-99106DDBD9A3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechLandLms.Core", "Core\TechLandLms.Core\TechLandLms.Core.csproj", "{23BEB54C-694B-4775-8E82-74682BE8BC24}"
 EndProject
@@ -91,14 +91,14 @@ Global
 		SccProjectTopLevelParentUniqueName1 = TechLandLms.sln
 		SccProjectName1 = EndPoints/TechLandLms.Web
 		SccLocalPath1 = EndPoints\\TechLandLms.Web
-		SccProjectUniqueName2 = ..\\..\\..\\TechLandTools\\Net5\\TechLandTools.Web\\TechLandTools.Web.csproj
+		SccProjectUniqueName2 = TechLandTools\\TechLandTools.Web\\TechLandTools.Web.csproj
 		SccProjectTopLevelParentUniqueName2 = TechLandLms.sln
-		SccProjectName2 = ../../../TechLandTools/Net5/TechLandTools.Web
-		SccLocalPath2 = ..\\..\\..\\TechLandTools\\Net5\\TechLandTools.Web
-		SccProjectUniqueName3 = ..\\..\\..\\TechLandTools\\Net5\\TechLandTools.Common\\TechLandTools.Common.csproj
+		SccProjectName2 = TechLandTools/TechLandTools.Web
+		SccLocalPath2 = TechLandTools\\TechLandTools.Web
+		SccProjectUniqueName3 = TechLandTools\\TechLandTools.Common\\TechLandTools.Common.csproj
 		SccProjectTopLevelParentUniqueName3 = TechLandLms.sln
-		SccProjectName3 = ../../../TechLandTools/Net5/TechLandTools.Common
-		SccLocalPath3 = ..\\..\\..\\TechLandTools\\Net5\\TechLandTools.Common
+		SccProjectName3 = TechLandTools/TechLandTools.Common
+		SccLocalPath3 = TechLandTools\\TechLandTools.Common
 		SccProjectUniqueName4 = Core\\TechLandLms.Core\\TechLandLms.Core.csproj
 		SccProjectTopLevelParentUniqueName4 = TechLandLms.sln
 		SccProjectName4 = Core/TechLandLms.Core

@@ -44,8 +44,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\TechLandTools\Net5\TechLandTools.Common\TechLandTools.Common.csproj" />
-    <ProjectReference Include="..\..\..\..\..\TechLandTools\Net5\TechLandTools.Web\TechLandTools.Web.csproj" />
+    <ProjectReference Include="..\..\TechLandTools\TechLandTools.Common\TechLandTools.Common.csproj" />
+    <ProjectReference Include="..\..\TechLandTools\TechLandTools.Web\TechLandTools.Web.csproj" />
     <ProjectReference Include="..\..\Core\TechLandLms.Common\TechLandLms.Common.csproj" />
     <ProjectReference Include="..\..\Core\TechLandLms.Core\TechLandLms.Core.csproj" />
     <ProjectReference Include="..\..\Core\TechLandLms.Dto\TechLandLms.Model.csproj" />

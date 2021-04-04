@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\TechLandTools\Net5\TechLandTools.Common\TechLandTools.Common.csproj" />
+    <ProjectReference Include="..\..\TechLandTools\TechLandTools.Common\TechLandTools.Common.csproj" />
   </ItemGroup>
 
 </Project>

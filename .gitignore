@@ -1,0 +1,17 @@
+
+Core/TechLandLms.Common/bin
+Core/TechLandLms.Common/obj
+Core/TechLandLms.Core/bin
+Core/TechLandLms.Core/obj
+Core/TechLandLms.Dto/bin
+Core/TechLandLms.Dto/obj
+Core/TechLandLms.Services/bin
+Core/TechLandLms.Services/obj
+Infrastructure/TechLandLms.Infrastructure/bin
+Infrastructure/TechLandLms.Infrastructure/obj
+TechLandTools/TechLandTools.Common/bin
+TechLandTools/TechLandTools.Common/obj
+TechLandTools/TechLandTools.Web/bin
+TechLandTools/TechLandTools.Web/obj
+.vs
+*.v2

@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\TechLandTools\Net5\TechLandTools.Common\TechLandTools.Common.csproj" />
+    <ProjectReference Include="..\..\TechLandTools\TechLandTools.Common\TechLandTools.Common.csproj" />
     <ProjectReference Include="..\..\Infrastructure\TechLandLms.Infrastructure\TechLandLms.Infrastructure.csproj" />
     <ProjectReference Include="..\TechLandLms.Common\TechLandLms.Common.csproj" />
     <ProjectReference Include="..\TechLandLms.Core\TechLandLms.Core.csproj" />
